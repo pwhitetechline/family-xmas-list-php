@@ -1,0 +1,3 @@
+# Allow access from our application only
+Order deny,allow
+Deny from all

@@ -1,0 +1,14 @@
+{
+    "name": "patwhite/family-christmas-list",
+    "description": "A family Christmas list application",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

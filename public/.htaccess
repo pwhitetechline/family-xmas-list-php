@@ -1,0 +1,25 @@
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /
+
+# Allow direct access to assets
+RewriteCond %{REQUEST_URI} \.(css|js|jpg|jpeg|png|gif|ico|woff|woff2|ttf|svg)$ [NC]
+RewriteRule ^ - [L]
+
+# Send everything else to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L,QSA]
+
+# Protect sensitive files
+<Files ~ "^\.env|\.log|composer\.(json|lock)|\.txt$">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Protect .htaccess
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
